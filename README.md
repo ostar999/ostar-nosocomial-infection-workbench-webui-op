@@ -1,5 +1,7 @@
 # 欧星星 · AI 院感工作台（独立 Web 版）
 
+> 当前是 Web / Docker 版本，DeepSeek Harness 插件版本地址为：https://github.com/ostar999/ostar-dsh-nosocomial-infection-workbench-op
+
 一个可独立部署的医院感染病例分析工作台。浏览器打开即可完成病例任务管理、材料导入、结构化事实抽取、院感判定与诊断分析、报告导出、病例时间线、病例问答和院感助手问答。
 
 支持两种部署方式：
