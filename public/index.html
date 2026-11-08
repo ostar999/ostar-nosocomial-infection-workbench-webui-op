@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>欧星星·AI院感工作台</title>
+  <link rel="icon" href="/icon.svg">
+  <link rel="stylesheet" href="/app.css">
+  <link rel="stylesheet" href="/theme-light.css">
+  <script>
+    (function () {
+      try {
+        var mode = localStorage.getItem('iw.theme') || 'dark'
+        var accent = localStorage.getItem('iw.accent') || 'cyan'
+        var systemLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches
+        document.documentElement.dataset.theme = mode === 'system' ? (systemLight ? 'light' : 'dark') : mode
+        document.documentElement.dataset.themeMode = mode
+        document.documentElement.dataset.accent = accent
+      } catch (e) {}
+    })()
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+  <div id="settings-root"></div>
+  <script src="/vendor/react.js"></script>
+  <script src="/vendor/react-dom.js"></script>
+  <script src="/runtime.js?v=1.8.6"></script>
+  <script src="/client.js?v=1.8.6"></script>
+</body>
+</html>

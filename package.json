@@ -1,0 +1,20 @@
+{
+  "name": "infection-workbench-webui",
+  "version": "1.8.6",
+  "private": true,
+  "type": "module",
+  "description": "Standalone web version of the AI nosocomial infection analysis workbench.",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "pdfjs-dist": "6.5.438",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "license": "AGPL-3.0-only",
+  "engines": {
+    "node": ">=22.13.0 <23 || >=24"
+  }
+}

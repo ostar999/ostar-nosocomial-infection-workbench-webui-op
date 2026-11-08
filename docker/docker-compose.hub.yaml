@@ -1,0 +1,12 @@
+name: ostar-nosocomial-infection-workbench-webui
+
+services:
+  infection-workbench:
+    image: ostar999/ostar-nosocomial-infection-workbench-webui:latest
+    pull_policy: always
+    container_name: ostar-nosocomial-infection-workbench-webui
+    restart: unless-stopped
+    ports:
+      - "8787:8787"
+    volumes:
+      - ./data:/app/data

@@ -1,0 +1,33 @@
+name: ostar-nosocomial-infection-workbench-webui
+
+services:
+  infection-workbench:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: ostar-nosocomial-infection-workbench-webui:1.8.6
+    container_name: ostar-nosocomial-infection-workbench-webui
+    restart: unless-stopped
+    ports:
+      - "${IW_PORT:-8787}:8787"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8787
+      IW_NO_OPEN: "1"
+      TZ: "${TZ:-Asia/Shanghai}"
+    volumes:
+      - infection-workbench-data:/app/data
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - "fetch('http://127.0.0.1:8787/').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
+
+volumes:
+  infection-workbench-data:
+    name: infection-workbench-data
